@@ -215,7 +215,7 @@ class CarInterface(CarInterfaceBase):
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
 
     elif candidate == CAR.TRAILBLAZER:
-      ret.mass = 1365. + STD_CARGO_KG
+      ret.mass = 1470. + STD_CARGO_KG
       ret.wheelbase = 2.64
       ret.steerRatio = 16.5
       ret.centerToFront = ret.wheelbase * 0.38  # FIXME: Need to tune more.
