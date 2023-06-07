@@ -168,7 +168,7 @@ class SoftDisableAlert(Alert):
 class UserSoftDisableAlert(SoftDisableAlert):
   def __init__(self, alert_text_2: str):
     super().__init__(alert_text_2),
-    self.alert_text_1 = _("오픈파일럿이 곧 비활성화됩니다")
+    self.alert_text_1 = _("오픈파일럿이 곧 비활성화됩니다.")
 
 
 class ImmediateDisableAlert(Alert):
@@ -249,7 +249,7 @@ def below_steer_speed_alert(CP: car.CarParams, CS: car.CarState, sm: messaging.S
 def calibration_incomplete_alert(CP: car.CarParams, CS: car.CarState, sm: messaging.SubMaster, metric: bool, soft_disable_time: int) -> Alert:
   return Alert(
     _("캘리브레이션 진행중 : %d%%") % sm['liveCalibration'].calPerc,
-    _("%s 이상으로 주행하세요.") % get_display_speed(MIN_SPEED_FILTER, metric),
+    _("%s 이상으로 주행하세요") % get_display_speed(MIN_SPEED_FILTER, metric),
     AlertStatus.normal, AlertSize.mid,
     Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .2)
 
@@ -514,7 +514,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.resumeRequired: {
     ET.WARNING: Alert(
-      _("오토홀드"),
+      _("정차중"),
        ("브레이크를 밟으면 해제됩니다"),
       AlertStatus.normal, AlertSize.full,
       Priority.MID, VisualAlert.none, AudibleAlert.none, .2),
@@ -526,7 +526,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.preLaneChangeLeft: {
     ET.PERMANENT: Alert(
-      _("좌측의 안전을 확인하세요"),
+      _("좌측을 확인하세요"),
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1, alert_rate=0.75),
@@ -534,7 +534,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.preLaneChangeRight: {
     ET.PERMANENT: Alert(
-      _("우측의 안전을 확인하세요"),
+      _("우측을 확인하세요"),
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1, alert_rate=0.75),
@@ -542,7 +542,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.laneChangeBlocked: {
     ET.PERMANENT: Alert(
-      _("차선 변경 불가 구간이 감지되었습니다"),
+      _("차선 변경 불가"),
       "",
       AlertStatus.userPrompt, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.prompt, .2),
@@ -724,7 +724,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.wrongGear: {
     # ET.SOFT_DISABLE: user_soft_disable_alert(_("Gear not D")),
-    ET.NO_ENTRY: NoEntryAlert(_("Gear not D")),
+    ET.NO_ENTRY: NoEntryAlert(_(" 주행기어로 바꿔주세요")),
   },
 
   # This alert is thrown when the calibration angles are outside of the acceptable range.
@@ -760,8 +760,8 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
   },
 
   EventName.lowBattery: {
-    ET.SOFT_DISABLE: soft_disable_alert(_("배터리 부족")),
-    ET.NO_ENTRY: NoEntryAlert(_("배터리 부족")),
+    ET.SOFT_DISABLE: soft_disable_alert(_("충전해주세요")),
+    ET.NO_ENTRY: NoEntryAlert(_("층전해주세요")),
   },
 
   # Different openpilot services communicate between each other at a certain
@@ -898,7 +898,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.steerUnavailable: {
     ET.IMMEDIATE_DISABLE: ImmediateDisableAlert(_("LKAS 오류 : 차량을 재시작하세요")),
-    ET.PERMANENT: NormalPermanentAlert(_("LKAS 오류 : 활성화하려면 차량을 재시작하세요")),
+    ET.PERMANENT: NormalPermanentAlert(_("LKAS 오류 : 차량을 재시작하세요")),
     ET.NO_ENTRY: NoEntryAlert(_("LKAS 오류 : 차량을 재시작하세요")),
   },
 
@@ -910,12 +910,12 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.reverseGear: {
     ET.PERMANENT: Alert(
-      _("기어 R"),
+      _("후진"),
       "",
       AlertStatus.normal, AlertSize.full,
       Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .2, creation_delay=0.5),
-    ET.USER_DISABLE: ImmediateDisableAlert(_("기어 R")),
-    ET.NO_ENTRY: NoEntryAlert(_("기어 R")),
+    ET.USER_DISABLE: ImmediateDisableAlert(_("후진")),
+    ET.NO_ENTRY: NoEntryAlert(_("후진")),
   },
 
   # On cars that use stock ACC the car can decide to cancel ACC for various reasons.
