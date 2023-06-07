@@ -221,7 +221,7 @@ class CarInterface(CarInterfaceBase):
       ret.centerToFront = ret.wheelbase * 0.38  # FIXME: Need to tune more.
       tire_stiffness_factor = 1.0
       ret.steerActuatorDelay = 0.18
-      ret.minSteerSpeed = -1.
+      ret.minSteerSpeed = 10 * CV.KPH_TO_MS
       ret.minEnableSpeed = -1.  # engage speed is decided by pcm
       ret.autoResumeSng = True
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
