@@ -514,8 +514,8 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.resumeRequired: {
     ET.WARNING: Alert(
-      _("정차중"),
-       ("브레이크를 밟으면 해제됩니다"),
+      _("대기중"),
+       (""),
       AlertStatus.normal, AlertSize.full,
       Priority.MID, VisualAlert.none, AudibleAlert.none, .2),
   },
@@ -526,7 +526,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.preLaneChangeLeft: {
     ET.PERMANENT: Alert(
-      _("좌측을 확인하세요"),
+      _("좌측 주의"),
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1, alert_rate=0.75),
@@ -534,7 +534,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.preLaneChangeRight: {
     ET.PERMANENT: Alert(
-      _("우측을 확인하세요"),
+      _("우측 주의"),
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1, alert_rate=0.75),
@@ -724,7 +724,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.wrongGear: {
     # ET.SOFT_DISABLE: user_soft_disable_alert(_("Gear not D")),
-    ET.NO_ENTRY: NoEntryAlert(_(" 주행기어로 바꿔주세요")),
+    ET.NO_ENTRY: NoEntryAlert(_("주행기어로 바꿔주세요")),
   },
 
   # This alert is thrown when the calibration angles are outside of the acceptable range.
