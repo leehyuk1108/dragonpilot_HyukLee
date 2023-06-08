@@ -1,27 +1,7 @@
-dragonpilot [Latest] - EON/C2 Release
+dragonpilot_HyukLee [Latest] - EON/C2 Beta
 ========================
-* Synced with openpilot master 2023.03.26 commits.
-* DP Highlight
-  * NEW: Manual Lane Change.
-  * NEW: Road Edge detection when Lane Change.
-  * NEW: Rainbow mode. (fancy lol)
-  * NEW: Local Trip counter.
-  * NEW: Alternative Lateral Controller
-    * Ability to switch to another lateral controller when SET speed is higher than configure speed.
-    * E.g. Use Torque + Laneless when belows 80kph and use PID + Laneline when above.
-  * TWEAK: **10s Lat MPC is removed due to poor performance on EON/C2**
-  * TWEAK: Refactored cameraview widget.
-  * TWEAK: Different color when Always On Lateral is enabled.
-  * TWEAK: Better TSS2 Long and DF tune. @cgw1968-5779
-  * TWEAK: e2e Lateral will display lanelines in white.
-  * TWEAK: Updated VisionIPC to match current version.
-  * TWEAK: DM reverted to 0.8.13 model and algorithm.
-  * TWEAK: E2E Initial speed matches ACC initial speed. (105 -> 40)
-  * FIXED: Fixed Reverse message not showing issue.
-  * FIXED: Honda - ALKA not working. @loveloveses
-  * FIXED: Display Mode.
-  * FIXED: Toyota - Speed Override.
-  * FIXED: Re-include CJK system font for EON/C2.
+* events.py 형님이 말씀하신대로 수정
+* steerActuatorDelay 쉐블저님 세팅대로 수정
 
 dragonpilot 2023.02.08 - EON/C2 Release
 ========================
