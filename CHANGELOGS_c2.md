@@ -2,6 +2,7 @@ dragonpilot_HyukLee [Latest] - EON/C2 Beta
 ========================
 * events.py 형님이 말씀하신대로 수정
 * steerActuatorDelay 쉐블저님 세팅대로 수정
+* 오토파일럿 engage/disengage 오디오 타이밍 수정
 
 dragonpilot 2023.02.08 - EON/C2 Release
 ========================
