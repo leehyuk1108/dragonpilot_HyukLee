@@ -1,5 +1,10 @@
 dragonpilot [Latest] - EON/C2 Release
 ========================
+* 2023.06.09
+* ret.뭐시꺵이 수정 0.18 -> 0.2
+
+dragonpilot [2023.03.XX] - EON/C2 Release
+========================
 * Synced with openpilot master 2023.03.26 commits.
 * DP Highlight
   * NEW: Manual Lane Change.
