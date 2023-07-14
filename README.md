@@ -14,8 +14,8 @@ UI적인 변화 외의 기존의 Dragonpilot과 큰 차이는 없습니다. 대�
 ## 각 Branch 설명
 Beta2 : Dragonpilot과 동일합니다.<br>
 Beta2-editedsum : 기존의 Dragonpilot의 Beta2 브랜치에서 한글화와 10km/h이하 주행시 주의 알림만 추가된 버전입니다.
+lp-dp-beta2 : beta2와 기능상 거의 동일하며, 0.8.16버전을 기반으로 제작되었습니다.
+그 외 : 제작중이거나, 작동 확인이 안됐거나, 테스트중인 Branch입니다.
 ## 추천 Branch
-
-## 라이선스
-
-## 그 외
+beta2
+lp-dp-beta2
