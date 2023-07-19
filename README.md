@@ -18,4 +18,4 @@ lp-dp-beta2-stable : beta2와 기능상 거의 동일합니다. 계기판 속도
 그 외 : 제작중이거나, 작동 확인이 안됐거나, 테스트중인 Branch입니다.
 ## 추천 Branch
 * beta2<br>
-* lp-dp-beta2-stable
+* lp-dp-beta2-stable 
