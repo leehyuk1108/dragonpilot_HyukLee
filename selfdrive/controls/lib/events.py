@@ -168,7 +168,7 @@ class SoftDisableAlert(Alert):
 class UserSoftDisableAlert(SoftDisableAlert):
   def __init__(self, alert_text_2: str):
     super().__init__(alert_text_2),
-    self.alert_text_1 = _("오픈파일럿이 곧 비활성화됩니다.")
+    self.alert_text_1 = _("오픈파일럿이 곧 비활성화됩니다")
 
 
 class ImmediateDisableAlert(Alert):
@@ -406,8 +406,8 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.stockAeb: {
     ET.PERMANENT: Alert(
-      _("BRAKE!"),
-      _("Stock AEB: Risk of Collision"),
+      _("AEB 작동함"),
+      _("충돌 위기가 있어 순정AEB가 작동했습니다"),
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.fcw, AudibleAlert.none, 2.),
     ET.NO_ENTRY: NoEntryAlert(_("AEB 작동함: 충돌 위기가 있어 AEB를 작동했습니다")),
@@ -470,7 +470,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.driverDistracted: {
     ET.WARNING: Alert(
-      _("오픈파일럿이 비활성화"),
+      _("오픈파일럿 비활성화"),
       _("운전자 응답 없음"),
       AlertStatus.critical, AlertSize.full,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.warningImmediate, .1),
@@ -494,7 +494,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.driverUnresponsive: {
     ET.WARNING: Alert(
-      _("오픈파일럿이 비활성화"),
+      _("오픈파일럿 비활성화"),
       _("운전자 응답 없음"),
       AlertStatus.critical, AlertSize.full,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.warningImmediate, .1),
