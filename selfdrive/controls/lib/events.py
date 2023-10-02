@@ -507,11 +507,12 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.resumeRequired: {
     ET.WARNING: Alert(
-      _("Press Resume to Exit Standstill"),
+      _("오토 홀드"),
       "",
       AlertStatus.userPrompt, AlertSize.small,
-      Priority.LOW, VisualAlert.none, AudibleAlert.none, .2),
+      Priority.MID, VisualAlert.none, AudibleAlert.none, .2),
   },
+
 
   EventName.belowSteerSpeed: {
     ET.WARNING: below_steer_speed_alert,
